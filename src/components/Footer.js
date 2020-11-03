@@ -13,7 +13,11 @@ const Footer = () => {
                     <i className="fas fa-mug-hot"></i>
                 </span>{" "}
                 by{" "}
-                <a href="https://arccoder.in" target="blank">
+                <a
+                    href="https://www.arccoder.in"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     Arc Coder | Harsh Patel
                 </a>
             </div>
