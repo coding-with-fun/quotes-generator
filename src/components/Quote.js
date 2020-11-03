@@ -20,41 +20,45 @@ const Quote = () => {
 
     return (
         <div className="card__container">
-            <div className="card__data">
-                {currentQuote.content === "" ? (
-                    <div className="loader__container">
-                        <div className="loader"></div>
-                    </div>
-                ) : (
-                    <Fragment>
-                        <div className="content">{currentQuote.content}</div>
-                        <footer className="blockquote-footer">
-                            <cite title="Source Title">
-                                {currentQuote.author}
-                            </cite>
-                        </footer>
-                    </Fragment>
-                )}
-            </div>
-            <div className="button__container">
-                <button
-                    disabled={currentIndex === 0 ? true : false}
-                    onClick={() => {
-                        setCurrentIndex(currentIndex - 1);
-                    }}
-                >
-                    Prev
-                </button>
-                <button
-                    disabled={
-                        !quoteData[currentIndex + 1]?.content ? true : false
-                    }
-                    onClick={() => {
-                        setCurrentIndex(currentIndex + 1);
-                    }}
-                >
-                    Next
-                </button>
+            <div className="card__body container">
+                <div className="card__data">
+                    {currentQuote.content === "" ? (
+                        <div className="loader__container">
+                            <div className="loader"></div>
+                        </div>
+                    ) : (
+                        <Fragment>
+                            <div className="content">
+                                {currentQuote.content}
+                            </div>
+                            <footer className="blockquote-footer">
+                                <cite title="Source Title">
+                                    {currentQuote.author}
+                                </cite>
+                            </footer>
+                        </Fragment>
+                    )}
+                </div>
+                <div className="button__container">
+                    <button
+                        disabled={currentIndex === 0 ? true : false}
+                        onClick={() => {
+                            setCurrentIndex(currentIndex - 1);
+                        }}
+                    >
+                        Prev
+                    </button>
+                    <button
+                        disabled={
+                            !quoteData[currentIndex + 1]?.content ? true : false
+                        }
+                        onClick={() => {
+                            setCurrentIndex(currentIndex + 1);
+                        }}
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     );
